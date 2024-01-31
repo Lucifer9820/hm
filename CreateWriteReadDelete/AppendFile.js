@@ -1,5 +1,5 @@
 var fs = require("fs");
-fs.appendFile("input.txt", "hiii ", function (err) {
+fs.appendFile("test.txt", "how are you!!!! ", function (err) {
   if (err) throw err;
   console.log("Saved!");
 });

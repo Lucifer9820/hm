@@ -1,4 +1,4 @@
 var fs = require("fs");
-fs.unlink("input.txt", function () {
+fs.unlink("test.txt", function () {
   console.log("File Deleted!");
 });
