@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <style>
+    input.ng-invalid {
+      background-color: lightcoral;
+    }
+    input.ng-valid {
+      background-color: white;
+    }
+  </style>
+  <body ng-app="myApp">
+    <center>
+      <form name="userdashboard">
+        <fieldset style="width: 40%">
+          <legend><h2>User DashBoard</h2></legend>
+          <div ng-controller="formCtrl">
+            <h3>
+              <b>
+                Enter Full Name:
+                <input
+                  type="text"
+                  name="name"
+                  style="padding: 5px"
+                  ng-model="fullname"
+                />
+              </b>
+            </h3>
+            <h3>
+              <b>
+                Appartment Number:
+                <input
+                  type="text"
+                  name="appartmentnumber"
+                  style="padding: 5px"
+                  ng-model="appartmentnumber"
+                  required
+                />
+              </b>
+            </h3>
+            <h3>
+              <b>
+                Electricity Meter Number:
+                <input
+                  type="text"
+                  name="numelectricity"
+                  style="padding: 5px"
+                  ng-model="meternumber"
+                />
+              </b>
+            </h3>
+            <h3>
+              <b>
+                Gas Meter Number
+                <input
+                  type="text"
+                  name="numgasmeter"
+                  style="padding: 5px"
+                  ng-model="gasnumber"
+                />
+              </b>
+            </h3>
+            <h3>
+              <b>
+                Number of Family Members:
+                <input
+                  type="text"
+                  name="numfamily"
+                  style="padding: 5px"
+                  ng-model="familynumbers"
+                />
+              </b>
+            </h3>
+            <p>
+              The input's valid state
+              is:{{userdashboard.appartmentnumber.$valid}}
+            </p>
+          </div>
+          <h3>
+            <b>Type of Vehicles: </b>
+            <select ng-model="myVar">
+              <option value=""></option>
+              <option value="Bike">Bike</option>
+              <option value="Car">Car</option>
+              <option value="Truck">Truck</option>
+            </select>
+          </h3>
+          <h3>
+            <b>
+              Type:
+              <input
+                type="radio"
+                name="type"
+                style="padding: 5px"
+                ng-model="type"
+                value="Owner"
+              />Owner
+              <input
+                type="radio"
+                name="type"
+                style="padding: 5px"
+                ng-model="type"
+                value="Rental"
+              />Rental
+            </b>
+          </h3>
+          <div ng-switch="myVar">
+            <div ng-switch-when="Bike">
+              <h1>Bike</h1>
+              <p><b>1 Tier Parking</b></p>
+            </div>
+            <div ng-switch-when="Car">
+              <h1>Car</h1>
+              <p><b>2 Tier Parking</b></p>
+            </div>
+            <div ng-switch-when="Truck">
+              <h1>Truck</h1>
+              <p><b>4 Tier Parking</b></p>
+            </div>
+          </div>
+          <br /><br />
+        </fieldset>
+      </form>
+    </center>
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("formCtrl", function ($scope) {
+        $scope.fullname = "Nishant";
+        $scope.meternumber = "101";
+      });
+    </script>
+  </body>
+</html>
